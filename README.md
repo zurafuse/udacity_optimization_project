@@ -1,55 +1,42 @@
-## Website Performance Optimization portfolio project
+# Udacity Website Performance Optimization Project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Optimize Cameron's portfolio and increase it's functionality speed. In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the Critical Rendering Path course.
 
-To get started, check out the repository and inspect the code.
+## How to Get Started
 
-### Getting started
+Clone my [Optimization Project repository](https://github.com/zurafuse/udacity_optimization_project) or download the zip file. Run index.html in the parent directly to start the app.
 
-#### Part 1: Optimize PageSpeed Insights score for index.html
 
-Some useful tips to help you get started:
+## Resources
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+[Udacity Website Optimization Project](https://github.com/udacity/frontend-nanodegree-mobile-portfolio) 
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+[Bootstrap Framework](http://getbootstrap.com/getting-started/)
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
+## Hosted Version of Project
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+[Click here to view the hosted version of Tim Horton's project.](http://zurafuse.com/vault/Udacity/OptimizationProject/)
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+## How to Run the Project
 
-#### Part 2: Optimize Frames per Second in pizza.html
+* Run index.html in the parent directory to start the app or visit the live hosted version at [www.zurafuse.com/vault/Udacity/OptimizationProject](http://zurafuse.com/vault/Udacity/OptimizationProject/)
+* Copy and paste the url of the hosted version into the [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) web page URL box and ensure a score of 90 or higher is achieved for both mobile and desktop versions.
+* 
+* 
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+## Optimizations Performed
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
+* make pizzeria.jpg 2 files
+* compressed images
+* asynch tag for google script
+* css files moved to body
+* print.css relative to media
 
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+* I gave the mover class the will-change property
+* In the for loop that generates the ".mover" sliding pizzas, I changed the number from 200 to 60.
+* In the updatePositions function, I moved the body.scrollTop calculation outside of the for loop.
+* In main.js, I removed the code's functionality to check for the pizza size of each randomPizzaContainer in the for loop and simply replaced it with code that checks for 3 sizes. I moved the scope of the sizes outside of the for loop, since all pizzas on the screen will be the same size anyway. I don't even need to know what the previous width was. I do not need an offset.
+* I removed the determineDx function because I felt like it was not needed.
 
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
