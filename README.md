@@ -30,22 +30,22 @@ Clone my [Optimization Project repository](https://github.com/zurafuse/udacity_o
 
 ### images
 
-* make pizzeria.jpg 2 files
-* compressed images
+* I created a different, smaller "pizzeria.jpg" file to use on index.html.
+* I used compressed images provided by PageSpeed Insights.
 
 ### index.html
 
-* asynch tag for google script
-* css files moved to body
-* print.css relative to media
+* I added the asynch tag to the google script, since google analytics does not need to block the page.
+* I moved style.css and print.css to the body of the html instead of loading it as an external file. This prevented the page from being blocked.
+* I referenced the googleapis style sheet with an onload attribute so it would not block the page anymore.
 
 ### pizza.html
 
-* css files moved to body
+* I moved the css files to the html body instead of referencing them as an external file.
 
 ### main.js
 
-* I gave the mover class the will-change property
+* I gave the mover class the will-change property.
 * In the for loop that generates the ".mover" sliding pizzas, I changed the number from 200 to 60.
 * In the updatePositions function, I moved the body.scrollTop calculation outside of the for loop.
 * In main.js, I removed the code's functionality to check for the pizza size of each randomPizzaContainer in the for loop and simply replaced it with code that checks for 3 sizes. I moved the scope of the sizes outside of the for loop, since all pizzas on the screen will be the same size anyway. I don't even need to know what the previous width was. I do not need an offset.
