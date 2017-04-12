@@ -440,10 +440,12 @@ var resizePizzas = function(size) {
 			break;
         default:
           console.log("bug in changePizzaSizes. size variable is " + size + " and newwidth is " + newwidth);
-      }		
-	
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      }
+	// Place DOM call into a variable outside the for loop so the DOM is not being called multiple times.
+	//Then reference the randomPizzaContainer collection via allMyContainers inside the loop.
+	var allMyContainers = document.querySelectorAll(".randomPizzaContainer");
+    for (var i = 0; i < allMyContainers.length; i++) {
+      allMyContainers[i].style.width = newwidth;
     }
   }
 
@@ -459,8 +461,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+//I moved pizzasDiv outside the for loop. We only need to define that one time.
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
