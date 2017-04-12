@@ -50,4 +50,5 @@ Clone my [Optimization Project repository](https://github.com/zurafuse/udacity_o
 * In the updatePositions function, I moved the body.scrollTop calculation outside of the for loop.
 * In main.js, I removed the code's functionality to check for the pizza size of each randomPizzaContainer in the for loop and simply replaced it with code that checks for 3 sizes. I moved the scope of the sizes outside of the for loop, since all pizzas on the screen will be the same size anyway. I don't even need to know what the previous width was. I do not need an offset.
 * I removed the determineDx function because I felt like it was not needed.
-
+* In the changePizzaSizes function, I moved the randomPizzaContainer DOM call to a variable outside the for loop and referenced that variable.
+* In line 463, I moved the pizzasDiv variable outside the for loop. No need to define it multiple times.
